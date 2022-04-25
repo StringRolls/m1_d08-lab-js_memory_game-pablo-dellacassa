@@ -1,3 +1,5 @@
+
+   
 const cards = [
   { name: 'aquaman', img: 'aquaman.jpg' },
   { name: 'batman', img: 'batman.jpg' },
@@ -27,16 +29,16 @@ const cards = [
 
 const memoryGame = new MemoryGame(cards);
 
-function flipCard(card){
-  card.classList.toggle("turned");
+function flipCard(card) {
+  card.classList.toggle('turned');
 }
 
-function printScore(){
-  document.getElementById('points').innerText = score;
+function printScore(score){
+  document.getElementById('points span').innerText = score;
 }
 
 function setCardToGuessed(card){
-  card.class.add("guessed");
+  card.classList.add('guessed');
 }
 
 window.addEventListener('load', (event) => {
@@ -66,8 +68,8 @@ window.addEventListener('load', (event) => {
         );
       } else {
         playResult.cards.forEach((card) => setCardToGuessed(card));
+        printScore(playResults.score);
       }
-      printScore(playResults.score);
     });
   });
 });
